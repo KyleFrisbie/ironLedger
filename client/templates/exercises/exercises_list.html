@@ -1,5 +1,10 @@
 <template name="exercisesList">
-  {{#each exercises}}
-    {{> exerciseItem}}
-  {{/each}}
+    <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+        <a href="{{pathFor 'exerciseSubmit'}}" class="waves-effect waves-light btn">Add exercise</a>
+    </div>
+    <div class="collection">
+      {{#each exercises}}
+        {{> exerciseItem}}
+      {{/each}}
+    </div>
 </template>

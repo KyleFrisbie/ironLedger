@@ -1,0 +1,57 @@
+{
+  "workout": {
+    "createdBy": "name/user",
+    "subscriber": "user_id",
+    "createdOn": "date",
+    "fitnessType": "type",
+    "name": "name",
+    "schedule": {
+      "type": [
+        "byDayNumber",
+        "byDayName"
+      ],
+      "day": {
+        "type": [
+          "dayNumber",
+          "dayName"
+        ],
+        "name": "name",
+        "muscleGroup": "muscleGroup",
+        "datesPerformed": [
+          "dates"
+        ],
+        "exercises": [{
+          "exercise": {
+            "name": "name",
+            "bodyPart": "bodyPart",
+            "personalRecord": {
+              "oneRepMax": {
+                "weight": "weight",
+                "date": "date"
+              },
+              "estimatedOneRepMax": {
+                "weight": "weight",
+                "date": "date"
+              }
+            },
+            "workingSet": {
+              "setNumber": "number",
+              "restTime": "time",
+              "weight": {
+                "previous": "previous",
+                "prescribed": "prescribed",
+                "actual": "actual",
+                "estimated": "estimated"
+              },
+              "reps": {
+                "previous": "previous",
+                "prescribed": "prescribed",
+                "actual": "actual"
+              }
+            }
+          }
+        }]
+      }
+    }
+  }
+}

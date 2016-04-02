@@ -28,22 +28,22 @@ if(Exercises.find().count() === 0) {
 if(Workouts.find().count() === 0) {
   Workouts.insert(
     {
-      title: 'Freak-out Friz'
+      name: 'Freak-out Friz'
     }
   );
   Workouts.insert(
     {
-      title: 'Arnold\'s Oblivion'
+      name: 'Arnold\'s Oblivion'
     }
   );
   Workouts.insert(
     {
-      title: 'Sally\'s Submission'
+      name: 'Sally\'s Submission'
     }
   );
   Workouts.insert(
     {
-      title: 'Repetitive Riggen'
+      name: 'Repetitive Riggen'
     }
   );
 }
