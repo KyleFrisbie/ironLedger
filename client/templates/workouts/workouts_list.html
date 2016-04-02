@@ -1,8 +1,9 @@
 <template name="workoutsList">
+    <h3>Workouts</h3>
+    <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+        <a href="{{pathFor 'workoutSubmit'}}" class="waves-effect waves-light btn">Add workout</a>
+    </div>
     <div class="workouts collection">
-        <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-            <a href="{{pathFor 'workoutSubmit'}}" class="waves-effect waves-light btn">Add workout</a>
-        </div>
       {{#each workouts}}
         {{> workoutItem}}
       {{/each}}

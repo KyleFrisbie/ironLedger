@@ -18,12 +18,8 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 iron:router
 materialize:materialize
 fourseven:scss
-insecure
 standard-minifier-css
 standard-minifier-js
 sacha:spin
-useraccounts:core
-useraccounts:materialize
-useraccounts:iron-routing
 accounts-ui
 accounts-password
