@@ -1,0 +1,19 @@
+<template name="exerciseEdit">
+    <form class="col s12">
+        <div class="row">
+            <div class="input-field col s6">
+                <input placeholder="exercise name" name="name" id="name" type="text" value="{{name}}" class="validate">
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <input placeholder="targeted body part" name="bodyPart" id="bodyPart" type="text" value="{{bodyPart}}"
+                       class="validate">
+            </div>
+        </div>
+        <div class="row">
+            <input type="submit" value="Submit" class="waves-effect waves-light btn">
+        </div>
+        <a class="btn-floating btn-large waves-effect waves-light red delete"><i class="material-icons">add</i></a>
+    </form>
+</template>
