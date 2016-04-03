@@ -1,6 +1,6 @@
 Template.workoutsList.helpers({
     workouts: function () {
-      return Workouts.find();
+      return Workouts.find({}, {sort: {name: 1}});
     }
 });
 
@@ -19,4 +19,3 @@ Template.workoutsList.onRendered(function () {
 Template.workoutsList.onDestroyed(function () {
     //add your statement here
 });
-

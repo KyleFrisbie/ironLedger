@@ -23,3 +23,5 @@ standard-minifier-js
 sacha:spin
 accounts-ui
 accounts-password
+check
+audit-argument-checks

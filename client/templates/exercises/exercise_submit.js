@@ -11,8 +11,17 @@ Template.exerciseSubmit.events({
       bodyPart: $(e.target).find('[name=bodyPart]').val()
     };
     
-    exercise._id = Exercises.insert(exercise)
-    Router.go('exercisePage', exercise)
+    Meteor.call('exerciseInsert', exercise, function (error, result) {
+      if (error) {
+        return alert(error.reason);
+      }
+      
+      if (result.exerciseExists) {
+        alert('This exercise has already been posted')
+      }
+      
+      Router.go('exercisePage', {_id: result._id});
+    });
   }
 });
 

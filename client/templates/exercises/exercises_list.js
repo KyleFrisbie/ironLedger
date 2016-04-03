@@ -1,6 +1,6 @@
 Template.exercisesList.helpers({
   exercises: function () {
-    return Exercises.find();
+    return Exercises.find({}, {sort: {name: 1}});
   }
 });
 

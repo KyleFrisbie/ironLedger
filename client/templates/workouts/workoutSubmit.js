@@ -11,9 +11,18 @@ Template.workoutSubmit.events({
     var workout = {
       name: $(e.target).find('[name=name]').val(),
     };
-
-    workout._id = Exercises.insert(workout)
-    Router.go('workoutPage', workout)
+    
+    Meteor.call('workoutInsert', workout, function (error, result) {
+      if (error) {
+        return alert(error.reason);
+      }
+      
+      if (result.workoutExists) {
+        alert('This workout has already been posted');
+      }
+      
+      Router.go('workoutPage', {_id: result._id})
+    });
   }
 });
 
