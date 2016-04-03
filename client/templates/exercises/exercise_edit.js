@@ -15,7 +15,7 @@ Template.exerciseEdit.events({
     
     Exercises.update(currentExerciseId, {$set: exerciseProperties}, function (error) {
       if (error) {
-        alert(error.reason);
+        sAlert.error(error.reason);
       } else {
         Router.go('exercisePage', {_id: currentExerciseId});
       }

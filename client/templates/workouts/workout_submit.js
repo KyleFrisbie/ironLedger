@@ -14,11 +14,11 @@ Template.workoutSubmit.events({
     
     Meteor.call('workoutInsert', workout, function (error, result) {
       if (error) {
-        return alert(error.reason);
+        return sAlert.error(error.reason);
       }
       
       if (result.workoutExists) {
-        alert('This workout has already been posted');
+        sAlert.error('This workout has already been posted');
       }
       
       Router.go('workoutPage', {_id: result._id})
