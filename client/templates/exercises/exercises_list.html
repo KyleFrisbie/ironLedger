@@ -1,13 +1,21 @@
 <template name="exercisesList">
-    <h3>Exercises</h3>
-  {{#if currentUser}}
-      <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-          <a href="{{pathFor 'exerciseSubmit'}}" class="waves-effect waves-light btn">Add exercise</a>
-      </div>
-  {{/if}}
+    <div class="row">
+        <div class="col-md-10">
+            <h3>Exercises</h3>
+        </div>
+    </div>
     <div class="collection">
-      {{#each exercises}}
-            {{> exerciseListItem}}
-      {{/each}}
+        <div class="row">
+            <div class="col-md-10 list-group">
+              {{#each exercises}}
+                {{> exerciseListItem}}
+              {{/each}}
+            </div>
+            <div class="col-md-2">
+              {{#if currentUser}}
+                  <a href="{{pathFor 'exerciseSubmit'}}" button type="button" class="btn btn-success">Add exercise</a>
+              {{/if}}
+            </div>
+        </div>
     </div>
 </template>
