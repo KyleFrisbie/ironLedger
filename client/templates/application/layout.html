@@ -1,9 +1,11 @@
 <template name="layout">
     <div class="container">
-      {{> navBar}}
         <div class="row">
-          {{> sAlert}}
-          {{> yield}}
+          {{> navBar}}
+            <div class="row">
+              {{> sAlert}}
+              {{> yield}}
+            </div>
         </div>
     </div>
 
