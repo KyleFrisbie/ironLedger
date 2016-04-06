@@ -1,4 +1,4 @@
-var hooksObject = {
+var exerciseHooksObject = {
   before: {
     method: function (doc) {
       var user = Meteor.user();
@@ -20,6 +20,20 @@ var hooksObject = {
   }
 };
 
-AutoForm.addHooks(['exerciseSubmit'], hooksObject);
+AutoForm.addHooks(['exerciseSubmit'], exerciseHooksObject);
+
+var workoutHooksObject = {
+  onSuccess: function (method, result) {
+    if (result.workoutExists) {
+      sAlert.error('This workout has already been posted');
+    }
+    Router.go('workoutPage', {_id: result._id});
+  },
+  onError: function (method, error) {
+    return sAlert.error(error.reason);
+  }
+};
+
+AutoForm.addHooks(['workoutSubmit'], workoutHooksObject);
 
 AutoForm.debug();
