@@ -1,0 +1,41 @@
+Iron Ledger
+
+Workouts:
+	General:
+		Any user can create
+		Can be set to private
+		Other users can use (if not private)
+	Data:
+		Author Info
+		Group of PerformedExercises (Exercise with sets/reps/rest) to perform
+
+Exercises:
+	General:
+		Any user can create
+		Can be set to private
+		Other users can use (if not private)
+	Data:
+		Author Info
+		Name
+		BodyPart
+		Image
+		Video
+		Instruction
+
+PersonalRecord:
+	General:
+		Personal best for a given exercise
+	Data:
+		UserId
+		ExerciseId
+		
+
+PerformedExercises
+	General:
+		Exercises as they are performed by the user in a workout
+	Data:
+		ExerciseId
+		UserId
+		Date
+		
+		
