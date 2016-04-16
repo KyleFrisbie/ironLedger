@@ -29,3 +29,5 @@ aldeed:autoform
 twbs:bootstrap
 ian:accounts-ui-bootstrap-3
 ongoworks:security
+zimme:select2-bootstrap3-css
+aldeed:autoform-select2
