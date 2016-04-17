@@ -1,7 +1,4 @@
 Template.workoutSubmit.helpers({
-  // exercises: function() {
-  //   return Exercises.find();
-  // }
   selectTwo: function () {
     return {
       placeholder: 'Add exercises',

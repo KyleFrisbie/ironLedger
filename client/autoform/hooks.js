@@ -6,6 +6,8 @@ var exerciseHooksObject = {
       doc.author = user.username;
 
       doc.submitted = new Date();
+      
+      console.log(doc);
       this.result(doc);
     }
   },
@@ -20,11 +22,23 @@ var exerciseHooksObject = {
   }
 };
 
-AutoForm.addHooks(['exerciseSubmit'], exerciseHooksObject);
-
 var workoutHooksObject = {
+  before: {
+    method: function (doc) {
+      console.log(doc);
+      var exercises = [];
+      doc.exercises.forEach(function (exercise) {
+        var exercise = Exercises.findOne({id:exercise.id})
+        console.log(exercise);
+        exercises.push(exercise);
+      });
+      doc.exercises = exercises;
+      console.log(doc);
+      this.result(doc);
+    }
+  },
   onSuccess: function (method, result) {
-    if (result.workoutExists) {
+    if (result.exerciseExists) {
       sAlert.error('This workout has already been posted');
     }
     Router.go('workoutPage', {_id: result._id});
@@ -34,6 +48,20 @@ var workoutHooksObject = {
   }
 };
 
+
+// var workoutHooksObject = {
+//   onSuccess: function (method, result) {
+//     if (result.workoutExists) {
+//       sAlert.error('This workout has already been posted');
+//     }
+//     Router.go('workoutPage', {_id: result._id});
+//   },
+//   onError: function (method, error) {
+//     return sAlert.error(error.reason);
+//   }
+// };
+
+AutoForm.addHooks(['exerciseSubmit'], exerciseHooksObject);
 AutoForm.addHooks(['workoutSubmit'], workoutHooksObject);
 
 AutoForm.debug();

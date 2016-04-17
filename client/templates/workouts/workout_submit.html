@@ -1,14 +1,11 @@
 <template name="workoutSubmit">
-  {{#autoForm collection="Workouts" id="workoutSubmit" type="method" method="workoutInsert"}}
-      <fieldset>
-          <legend>Add a Workout</legend>
-        {{> afQuickField name="name"}}
-        {{> afFormGroup name="exercises" multiple=true select2Options=selectTwo}}
-      </fieldset>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  {{/autoForm}}
+  {{> quickForm collection="Workouts" id="workoutSubmit" type="method" meteormethod="workoutInsert" }}
+</template>
+
+<template name="exerciseInWorkout">
+  {{> quickForm collection="Exercises" id="exerciseInWorkout" type="insert" }}
 </template>
 
 <template name="exerciseArrayInsert">
-  {{> quickForm id="exerciseArrayInsert" type="update-pushArray" collection=Exercises doc=relatedWorkoutDoc scope="exercises"}}
+  {{> quickForm id="exerciseArrayInsert" type="update-pushArray" collection=Exercises doc=this scope="exercises"}}
 </template>
