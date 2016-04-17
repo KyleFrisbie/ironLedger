@@ -1,5 +1,11 @@
 <template name="workoutSubmit">
-  {{> quickForm collection="Workouts" id="workoutSubmit" type="method" meteormethod="workoutInsert" }}
+  {{# autoForm collection="Workouts" id="workoutSubmit" type="method" meteormethod="workoutInsert" }}
+      <fieldset>
+        {{> afQuickField name='name' }}
+        {{> afQuickField name='exercises' }}
+      </fieldset>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  {{/autoForm}}
 </template>
 
 <template name="exerciseInWorkout">

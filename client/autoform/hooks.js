@@ -6,7 +6,7 @@ var exerciseHooksObject = {
       doc.author = user.username;
 
       doc.submitted = new Date();
-      
+
       console.log(doc);
       this.result(doc);
     }
@@ -23,18 +23,29 @@ var exerciseHooksObject = {
 };
 
 var workoutHooksObject = {
+  // formToDoc: function (doc) {
+  //   var exercises = [];
+  //   doc.exercises.forEach(function (exercise) {
+  //     var dbExercise = Exercises.findOne({_id: exercise});
+  //     exercises.push(dbExercise);
+  //   });
+  //   doc.exercises = [];
+  //   exercises.forEach(function (exercise) {
+  //     doc.exercises.push(exercise);
+  //   });
+  //   console.log(doc);
+  //   return doc;
+  // },
   before: {
     method: function (doc) {
-      console.log(doc);
       var exercises = [];
       doc.exercises.forEach(function (exercise) {
-        var exercise = Exercises.findOne({id:exercise.id})
-        console.log(exercise);
-        exercises.push(exercise);
+        var dbExercise = Exercises.findOne({_id: exercise});
+        exercises.push(dbExercise);
       });
       doc.exercises = exercises;
-      console.log(doc);
-      this.result(doc);
+      console.log(doc.exercises);
+      return doc;
     }
   },
   onSuccess: function (method, result) {
