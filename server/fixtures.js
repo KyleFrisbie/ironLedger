@@ -1,36 +1,36 @@
 if(Exercises.find().count() === 0) {
   Exercises.insert(
     {
-      author: 'admin',
-      userId: '1',
-      submitted: new Date(),
+      // author: 'admin',
+      // userId: '1',
+      // submitted: new Date(),
       name: 'Bench Press',
       bodyPart: 'chest'
     }
   );
   Exercises.insert(
     {
-      author: 'admin',
-      userId: '1',
-      submitted: new Date(),
+      // author: 'admin',
+      // userId: '1',
+      // submitted: new Date(),
       name: 'Barbell Bicep Curl',
       bodyPart: 'biceps'
     }
   );
   Exercises.insert(
     {
-      author: 'admin',
-      userId: '1',
-      submitted: new Date(),
+      // author: 'admin',
+      // userId: '1',
+      // submitted: new Date(),
       name: 'Sit-up',
       bodyPart: 'abdominals'
     }
   );
   Exercises.insert(
     {
-      author: 'admin',
-      userId: '1',
-      submitted: new Date(),
+      // author: 'admin',
+      // userId: '1',
+      // submitted: new Date(),
       name: 'Squat',
       bodyPart: 'legs'
     }

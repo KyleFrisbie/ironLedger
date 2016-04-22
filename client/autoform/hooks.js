@@ -1,16 +1,16 @@
 var exerciseHooksObject = {
-  before: {
-    method: function (doc) {
-      var user = Meteor.user();
-      doc.userId = user._id;
-      doc.author = user.username;
-
-      doc.submitted = new Date();
-
-      console.log(doc);
-      this.result(doc);
-    }
-  },
+  // before: {
+  //   method: function (doc) {
+  //     var user = Meteor.user();
+  //     doc.userId = user._id;
+  //     doc.author = user.username;
+  //
+  //     doc.submitted = new Date();
+  //
+  //     console.log(doc);
+  //     this.result(doc);
+  //   }
+  // },
   onSuccess: function (method, result) {
     if (result.exerciseExists) {
       sAlert.error('This exercise has already been posted');
@@ -36,18 +36,18 @@ var workoutHooksObject = {
   //   console.log(doc);
   //   return doc;
   // },
-  before: {
-    method: function (doc) {
-      var exercises = [];
-      doc.exercises.forEach(function (exercise) {
-        var dbExercise = Exercises.findOne({_id: exercise});
-        exercises.push(dbExercise);
-      });
-      doc.exercises = exercises;
-      console.log(doc.exercises);
-      return doc;
-    }
-  },
+  // before: {
+  //   method: function (doc) {
+  //     var exercises = [];
+  //     doc.exercises.forEach(function (exercise) {
+  //       var dbExercise = Exercises.findOne({_id: exercise});
+  //       exercises.push(dbExercise);
+  //     });
+  //     doc.exercises = exercises;
+  //     console.log(doc.exercises);
+  //     return doc;
+  //   }
+  // },
   onSuccess: function (method, result) {
     if (result.exerciseExists) {
       sAlert.error('This workout has already been posted');
