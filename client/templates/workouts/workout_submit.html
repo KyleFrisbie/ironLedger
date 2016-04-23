@@ -1,11 +1,71 @@
-<template name="workoutSubmit">
+<template name="workoutSubmitAuto">
   {{# autoForm collection="Workouts" id="workoutSubmit" type="method" meteormethod="workoutInsert" }}
       <fieldset>
         {{> afQuickField name='name' }}
         {{> afQuickField name='exercises' }}
       </fieldset>
-    <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary">Submit</button>
   {{/autoForm}}
+</template>
+
+<template name="workoutSubmit">
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label for="workoutName">Workout Name</label>
+            <input type="text" class="form-control" id="workoutName" placeholder="name">
+            <label for="workoutDescription">Workout Description</label>
+            <textarea type="text" class="form-control" id="workoutDescription" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="exercises">Exercises</label><br/>
+            <table class="table table-hover" id="exercises" style="display:none">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Stress Quantity</th>
+                    <th>Stress Unit</th>
+                    <th>Strain Quantity</th>
+                    <th>Strain Unit</th>
+                    <th>Rest</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <input type="text" class="form-control" placeholder="exercise name">
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" placeholder="stress (lbs/time)">
+                    </td>
+                    <td>
+                        <select class="form-control">
+                            <option>lbs</option>
+                            <option>kg</option>
+                            <option>sec</option>
+                        </select>
+                    </td>                    <td>
+                        <input type="text" class="form-control" placeholder="strain (reps/distance)">
+                    </td>
+                    <td>
+                        <select class="form-control">
+                            <option>reps</option>
+                            <option>m</option>
+                            <option>miles</option>
+                            <option>sec</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="number" class="form-control" placeholder="rest time (s)">
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <button class="btn btn-success btn-block" id="addExercise" type="button" value="Input">Add Exercise</button>
+        </div>
+        <div class="form-group">
+            <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
 </template>
 
 <template name="exerciseInWorkout">

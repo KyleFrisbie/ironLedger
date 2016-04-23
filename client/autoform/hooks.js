@@ -73,6 +73,6 @@ var workoutHooksObject = {
 // };
 
 AutoForm.addHooks(['exerciseSubmit'], exerciseHooksObject);
-AutoForm.addHooks(['workoutSubmit'], workoutHooksObject);
+// AutoForm.addHooks(['workoutSubmit'], workoutHooksObject);
 
 AutoForm.debug();
