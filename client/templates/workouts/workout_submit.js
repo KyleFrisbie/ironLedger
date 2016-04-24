@@ -14,10 +14,11 @@ function exerciseSelect() {
   });
 }
 
+Template.exerciseInsertModal.onRendered(function () {
+  console.log(this);
+});
+
 Template.workoutSubmit.helpers({
-  getTableRows: function () {
-    return;
-  }
 });
 
 Template.workoutSubmit.events({
@@ -25,12 +26,13 @@ Template.workoutSubmit.events({
     $(e.currentTarget).parent().parent().parent().remove();
   },
   'select2:select .exerciseNameSelect': function () {
-    var exerciseId = $('#exerciseNameSelect :selected').text();
-    if (!(Exercises.findOne({name: exerciseId}))) {
-  
+    var exerciseName = $('#exerciseNameSelect :selected').text();
+    if (!(Exercises.findOne({name: exerciseName}))) {
+      var exerciseObject = {name: exerciseName};
+      Modal.show('exerciseInsertModal', exerciseObject);
     }
   },
-  'click .removeSet': function(e) {
+  'click .removeSet': function (e) {
     $(e.currentTarget).parent().parent().remove();
   },
   'click #addExercise': function () {
